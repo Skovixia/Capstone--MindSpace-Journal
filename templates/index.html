@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindSpace Journaling App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script>var labelToEmotion = {{ label_to_emotion | tojson }};</script>
+    <script>var urls = {{ urls | tojson | safe }};</script>
+</head>
+    <div class="container">
+        <h1 class="title">🌙 MindSpace 🌙</h1>
+        <form id="journal-form" accept-charset="UTF-8">
+            <textarea id="journal-entry" rows="5" placeholder="What's on your mind?"></textarea><br>
+            <button type="submit" class="btn text-light">Submit 🚀</button>
+        </form>
+        <div id="emotions">
+            <h2 class="sub-title text-light">✨Overall Predicted Emotion ✨</h2>
+            <button class="btn btn-warning text-light" type="button" disabled>
+                <span class="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
+                <span role="status">Loading...</span>
+            </button>
+        </div>
+        <div id="emotion-probabilities" class="list-group">
+            <!-- emotion probabilities items will be dynamically added here -->
+        </div>
+        <div id="playlists" class="playlists-container">
+            <h2 class="sub-title">🎶 Playlists 🎶</h2>
+            <div id="playlist-container"></div>
+        </div>
+        
+        <div id="emotion-chart" class="emotion-chart"></div>
+    </div>
+    <script src="{{ url_for('static', filename='header.js') }}"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

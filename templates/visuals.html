@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visuals</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script>var urls = {{ urls | tojson | safe }};</script>
+</head>
+<body>
+   <div class="content">
+    <h1>Datasets & GloVe Embeddings:</h1><br>
+    <div class="card-container">
+        <div class="row">
+            <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                <h5 class="card-title">Emotions by Nidula Elgiriyewithana</h5>
+                <p class="card-text">Explore the Kaggle dataset I used for training Naive Bayes and Logistic Regression models.</p>
+                <a href="https://www.kaggle.com/datasets/nelgiriyewithana/emotions" target="_blank" class="btn btn-primary">View Dataset</a>
+                </div>
+            </div>
+            </div>
+
+            <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                <h5 class="card-title">Emotions Dataset for NLP by Praveen Govi</h5>
+                <p class="card-text">Explore the Kaggle dataset I used for training the LSTM model.</p>
+                <a href="https://www.kaggle.com/datasets/praveengovi/emotions-dataset-for-nlp" target="_blank" class="btn btn-primary">View Dataset</a>
+                </div>
+            </div>
+            </div>
+
+            <div class="col-md-6 mt-3">
+              <div class="card">
+                  <div class="card-body">
+                      <h5 class="card-title">GloVe Embeddings for NLP</h5>
+                      <p class="card-text">Explore the GloVe embeddings I used for training my LSTM model. (zip file included in data directory)</p>
+                      <a href="https://nlp.stanford.edu/projects/glove/" target="_blank" class="btn btn-primary">View GloVe Embeddings</a>
+                      <p class="card-text">Download GloVe embeddings:</p>
+                      <ul class="list-unstyled">
+                          <li><a href="https://nlp.stanford.edu/data/glove.6B.zip" target="_blank">glove.6B.zip</a> (822 MB)</li>
+                          <li><a href="https://nlp.stanford.edu/data/glove.6B.50d.txt" target="_blank">glove.6B.50d.txt</a> (50-dimensional vectors)</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-6 mt-3"> <!-- Adjusted margin here -->
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Twitter RoBERTa Base Sentiment Model</h5>
+                    <p class="card-text">Explore the RoBERTa pre-trained model I used for sentiment analysis to improve predictions from my trained models.</p>
+                    <a href="https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment" target="_blank" class="btn btn-primary">View Model</a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+    <h1>Exploratory Data Visualizations</h1><br>
+
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+              Confusion Matrices
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>Here is a collection of confusion matrices that were developed during training of the models used.</strong> 
+              <p>A confusion matrix is a table used in machine learning to visualize the performance of a classification model by presenting the counts of true positive, true negative, false positive, and false negative predictions across different classes. It helps in assessing the accuracy and effectiveness of a model's predictions.</p>
+              <div id="carouselExampleCaptions" class="carousel slide">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="static/images/confusionMatrices/lrModelConfusionMatrix.png" class="d-block w-100" alt="..."><br>
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Logistic Regression model Confusion Matrix</h5>
+                      <p>The resulting confusion matrix after training my logistic regression model.</p>
+                      <p>Accuracy score for Logistic Regression model:  0.8857433043033197</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="static/images/confusionMatrices/nbConfusionMatrix.png" class="d-block w-100" alt="..."><br>
+                    <div class="carousel-caption d-none d-sm-block">
+                      <h5>Naive Bayes model Confusion Matrix</h5>
+                      <p>The resulting confusion matrix after training my Naive Bayes model.</p>
+                      <p>Accuracy score for Naive Bayes model:  0.8605279783754388</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="static/images/confusionMatrices/lstmConfusionMAtrix.png" class="d-block w-100" alt="..."><br>
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>LSTM model trained with GloVe embeddings Confusion Matrix</h5>
+                      <p>The resulting confusion matrix after training my LSTM model trained with GloVe embeddings.</p>
+                      <p>Accuracy score for LSTM model: 0.847000002861023</p>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Plotted TF1 Scores for tokens by emotion
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>TF1 scores for tokens across different emotional categories.</strong>
+              <p>These visualizations showcase TF1 scores for tokens across various emotional categories, offering insights into the significance of words within each emotion.</p>
+              <p>(Derived from the dataset utilized to train the Logistic Regression and Naive Bayes models)</p>
+              <div id="carouselExampleCaptions2" class="carousel slide">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="static/images/plottedTF1Scores/anger.png" class="d-block w-100" alt="..."><br>
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Anger</h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="static/images/plottedTF1Scores/fear.png" class="d-block w-100" alt="..."><br>
+                    <div class="carousel-caption d-none d-sm-block">
+                      <h5>Fear</h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="static/images/plottedTF1Scores/joy.png" class="d-block w-100" alt="..."><br>
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Joy</h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="static/images/plottedTF1Scores/love.png" class="d-block w-100" alt="..."><br>
+                    <div class="carousel-caption d-none d-sm-block">
+                      <h5>Love</h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="static/images/plottedTF1Scores/sadness.png" class="d-block w-100" alt="..."><br>
+                    <div class="carousel-caption d-none d-sm-block">
+                      <h5>Sadness</h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="static/images/plottedTF1Scores/surprise.png" class="d-block w-100" alt="..."><br>
+                    <div class="carousel-caption d-none d-sm-block">
+                      <h5>Surprise</h5>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Word Clouds
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>Word Clouds plotted by emotions.</strong>
+              <p>This collection features word clouds representing various emotions, visually illustrating the frequency of words associated with each emotional category.</p>
+              <p>(Derived from the dataset utilized to train the Logistic Regression and Naive Bayes models)</p>
+              <div id="carouselExampleCaptions3" class="carousel slide">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="static/images/wordClouds/angerWordCLoud.png" class="d-block w-100" alt="..."><br>
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Anger</h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="static/images/wordClouds/fearWordCloud.png" class="d-block w-100" alt="..."><br>
+                    <div class="carousel-caption d-none d-sm-block">
+                      <h5>Fear</h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="static/images/wordClouds/joyWordCloud.png" class="d-block w-100" alt="..."><br>
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Joy</h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="static/images/wordClouds/loveWordCloud.png" class="d-block w-100" alt="..."><br>
+                    <div class="carousel-caption d-none d-sm-block">
+                      <h5>Love</h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="static/images/wordClouds/sadnessWordCloud.png" class="d-block w-100" alt="..."><br>
+                    <div class="carousel-caption d-none d-sm-block">
+                      <h5>Sadness</h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="static/images/wordClouds/surpriseWordCloud.png" class="d-block w-100" alt="..."><br>
+                    <div class="carousel-caption d-none d-sm-block">
+                      <h5>Surprise</h5>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions3" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions3" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                Emotion vs. Sentiment
+              </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>Here is a catplot of the sentiment determined from the dataset within each emotion.</strong>
+                <p>A categorical plot (catplot) using Seaborn library- It visualizes the distribution of sentiment labels across different emotions in the dataset. The x-axis represents emotions, and each emotion is further categorized by sentiment, shown by different colors. The count of each sentiment within each emotion category is represented by the height of the bars. This plot helps to understand the relationship between emotions and sentiment labels in the dataset.</p>
+                <div id="carouselExampleCaptions4" class="carousel slide">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="static/images/emotionVsSentiment.png" class="d-block w-100" alt="..."><br>
+                      <div class="carousel-caption d-none d-md-block">
+                        (Derived from the dataset utilized to train the Logistic Regression and Naive Bayes models)
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>          
+      </div> 
+    </div>      
+    <script src="{{ url_for('static', filename='header.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

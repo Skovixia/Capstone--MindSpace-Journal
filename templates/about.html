@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script>var urls = {{ urls | tojson | safe }};</script>
+</head>
+<body>
+    <div class="project-overview">
+        <h1>Project Overview:</h1>
+        <div>
+            <p>
+                Welcome to MindSpace, where we harness the power of technology to support your emotional well-being! Our application utilizes advanced natural language processing (NLP) and machine learning techniques to understand and respond to your emotions.
+            </p>
+            <p>
+                By analyzing your journal entries or mood updates, our system determines the dominant emotion conveyed. We've trained a variety of models, including a sophisticated LSTM model using GloVe embeddings, along with logistic regression and naive Bayes classifiers. These models collectively achieve impressive accuracy rates: Logistic Regression (88.57%), Naive Bayes (86.05%), and LSTM (84.70%).
+            </p>
+            <p>
+                Additionally, we've integrated the predictions from the RoBERTa pretrained model to determine positive, negative, or neutral readings. This enhances the overall prediction accuracy and ensures a comprehensive understanding of user emotions.
+            </p>
+            <p>
+                Once we've identified your sentiment, we curate a personalized Spotify playlist using the Spotify API. These playlists are tailored to match your emotional state, providing you with music that resonates with your mood and potentially enhances your mental well-being.
+            </p>
+            <p>
+                In summary, MindSpace leverages sentiment analysis to understand your emotions and suggest music playlists that enrich your experience. Our goal is to provide you with meaningful support for your mental health journey.
+            </p>
+        </div>
+
+    <script src="{{ url_for('static', filename='header.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
