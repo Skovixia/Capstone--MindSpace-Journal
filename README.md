@@ -20,7 +20,7 @@ The application includes a tab to the home page (the journal), an "About" page a
 #### 1. Clone the repository:
 + Open the Powershell terminal in your IDE
 ```
-git clone https://github.com/Skovixia/MindSpaceJournal.git
+git clone https://github.com/Skovixia/Capstone--MindSpace-Journal.git
 ```
 
 #### 2. Navigate to the project directory if not already in it:
