@@ -80,3 +80,15 @@ pip install -r requirements.txt
 ```
 python app.py
 ```
+
+#### 7. Enter a journal entry to get predictions and playlists
+
+#### 8. Explore tabs
+   + "Visuals/Datasets":
+          This will provide the user with visuals from training, along with links to the datasets used.
+
+   + "About":
+         This tab will provide a project overview that briefly describes the goals of MindSpace along with information on development.
+   + "Journal":
+         This tab will bring the user back to the journal entry form for predictions and playlists.
+
