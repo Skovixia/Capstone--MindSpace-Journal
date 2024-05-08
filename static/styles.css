@@ -25,6 +25,40 @@ body {
     overflow: hidden; 
 }
 
+.textarea-container {
+    position: relative;
+}
+
+#journal-entry {
+    font-size: 16px; 
+    padding: 10px; 
+    width: 100%; 
+    background-color: #1f1f1f;
+    color: #ffffff;
+    font-size: 1.5vw; 
+    box-sizing: border-box;
+}
+
+#char-count {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    font-size: 10px;
+    color: white;
+    z-index: 1;
+}
+#journal-entry.limit-reached {
+    border-color: red; /* Change border color to red when limit is reached */
+    animation: shake 0.5s ease-in-out; /* Add shake animation */
+}
+
+@keyframes shake {
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
 
 .title {
     text-align: center;
@@ -105,15 +139,6 @@ button:hover {
 .playlist-name {
     margin-top: 1vw; 
     font-size: 1.2vw; 
-}
-
-#journal-entry {
-    font-size: 16px; 
-    padding: 10px; 
-    width: 100%; 
-    background-color: #1f1f1f;
-    color: #ffffff;
-    font-size: 1.5vw; 
 }
 
 .carousel-control-prev-icon,

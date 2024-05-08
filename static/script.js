@@ -1,5 +1,19 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log(labelToEmotion);
+    //updates the character count for character limit
+    const charCount = document.getElementById('char-count');
+
+    document.getElementById('journal-entry').addEventListener('input' , function() {
+        const count = this.value.length;
+        charCount.textContent = count + '/500';
+
+        if (count >=500){
+            this.classList.add('limit-reached');
+        } else {
+            this.classList
+        }
+    });
+
     document.getElementById('journal-form').addEventListener('submit', function(event) {
         event.preventDefault();
         let journalEntry = document.getElementById('journal-entry').value;

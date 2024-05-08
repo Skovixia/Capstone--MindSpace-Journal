@@ -13,7 +13,10 @@
     <div class="container">
         <h1 class="title">🌙 MindSpace 🌙</h1>
         <form id="journal-form" accept-charset="UTF-8">
-            <textarea id="journal-entry" rows="5" placeholder="What's on your mind?"></textarea><br>
+            <div class="textarea-container">
+                <textarea id="journal-entry" rows="5" maxlength="500" placeholder="What's on your mind?"></textarea><br>
+                <div id = "char-count"> 0/500 </div>
+            </div>
             <button type="submit" class="btn text-light">Submit 🚀</button>
         </form>
         <div id="emotions">
