@@ -37,7 +37,7 @@ cd path/to/MindSpaceJournal
    + What you enter in the fields does not matter, however, a valid URL is required. For that, you may enter "http://localhost:8080/".
         + Example:
 
-        <img src="static\images\spotifyApp.png" alt="Spotify Create App fields" width="800" height="400">
+        <img src="static\images\spotifyApp.png" alt="Spotify Create App fields" width="400">
 
 
 + Save your app and it should send you back into your dashboard
