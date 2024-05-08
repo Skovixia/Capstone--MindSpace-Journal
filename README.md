@@ -23,9 +23,9 @@ The application includes a tab to the home page (the journal), an "About" page a
 git clone https://github.com/Skovixia/Capstone--MindSpace-Journal.git
 ```
 
-#### 2. Navigate to the project directory if not already in it:
+#### 2. Navigate to the project directory via the terminal if not already in it:
 ```
-cd path/to/MindSpaceJournal
+cd path/to/Capstone--MindSpace-Journal
 ```
 #### 3. Set up Spotify API credentials:
 
