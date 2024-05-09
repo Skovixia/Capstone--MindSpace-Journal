@@ -48,8 +48,8 @@ body {
     z-index: 1;
 }
 #journal-entry.limit-reached {
-    border-color: red; /* Change border color to red when limit is reached */
-    animation: shake 0.5s ease-in-out; /* Add shake animation */
+    border-color: red; 
+    animation: shake 0.5s ease-in-out;
 }
 
 @keyframes shake {
